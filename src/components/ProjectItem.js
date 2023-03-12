@@ -55,7 +55,7 @@ const ProjectItem = ({
           <Title>{title}</Title>
           <ListWrapper>
             {contents.map((item, i) => (
-              <ListItem key={index + "-" + i} component="div" disablePadding>
+              <ListItem key={index + "-" + i} component="div" disablePadding className="listItem">
               <ListItemButton>
               <ListItemIcon>
                 <ArrowForwardIosIcon />
@@ -170,6 +170,16 @@ const ListWrapper = styled.div`
   width: 300px;
   height: 350px;
   overflow: scroll;
+  /* Hide the scrollbar on webkit-based browsers */
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  /* Optional: Set a background color for the thumb */
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+  }
 
   @media (max-width: ${(props) => props.theme.tablet}px) {
     display: none;

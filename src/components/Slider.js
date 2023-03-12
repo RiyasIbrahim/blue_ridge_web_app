@@ -154,13 +154,16 @@ const Slider = ({
     dragging = false;
     let direction;
     if (start.x === x) {
-      direction = x / window.innerWidth >= 0.5 ? "right" : "left";
+      if (!e.target.closest('.listItem')) {
+        direction = x / window.innerWidth >= 0.5 ? "right" : "left";
+        slide(speed, null, direction);
+      }
     } else {
       // On mouse up, slide to next project item
       // Determine direction
       direction = start.x > x ? "right" : "left";
+      slide(speed, null, direction);
     }
-    slide(speed, null, direction);
   }, []);
 
   const handleLeave = useCallback((e) => {
