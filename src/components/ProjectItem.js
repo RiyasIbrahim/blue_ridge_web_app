@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 import ListItem from '@mui/material/ListItem';
@@ -6,6 +6,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ListItemIcon from '@mui/material/ListItemIcon';
+
+
 
 const calc = (x, y) => [
   -(y - window.innerHeight / 2) / 20,
@@ -25,6 +27,16 @@ const ProjectItem = ({
     xys: [0, 0, 1],
     config: { mass: 10, tension: 350, friction: 40 },
   }));
+
+  const [hoveredItemId, setHoveredItemId] = useState(null);
+
+  const handleListItemHover = (id) => {
+    setHoveredItemId(id);
+  };
+
+  const handleListItemLeave = () => {
+    setHoveredItemId(null);
+  };
 
   return (
     <Container
@@ -56,11 +68,18 @@ const ProjectItem = ({
           <ListWrapper>
             {contents.map((item, i) => (
               <ListItem key={index + "-" + i} component="div" disablePadding className="listItem">
-              <ListItemButton>
+              <ListItemButton onMouseEnter={() => handleListItemHover(index + "-" + i)}
+          onMouseLeave={() => handleListItemLeave()}
+          style={{
+            transform: hoveredItemId === index + "-" + i ? 'scale(1.2)' : 'none',
+          //  filter: hoveredItemId && hoveredItemId !== index + "-" + i ? 'blur(3px)' : 'none',
+          }}
+          >
               <ListItemIcon>
                 <ArrowForwardIosIcon />
               </ListItemIcon>
-                <ListItemText primary={item} />
+                <ListItemText primary={item}  style={{ fontWeight: 'normal' }} onMouseOver={(e) => e.target.style.fontWeight = 'bolder'} 
+                onMouseLeave={(e) => e.target.style.fontWeight = 'normal'} />
               </ListItemButton>
             </ListItem>
             ))}
