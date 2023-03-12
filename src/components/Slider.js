@@ -11,11 +11,7 @@ const Slider = ({
     data = [],
     speed = 500,
     easing = null,
-    bgColor = "rgba(255, 255, 255, 0.05)",
-    showButton = true,
-    buttonHref = "#",
-    buttonTarget = "_blank",
-    buttonText = "View case study",
+    bgColor = "rgba(255, 255, 255, 0.05)"
   },
 }) => {
   // Check for exceptions
@@ -240,10 +236,6 @@ const Slider = ({
         return (
           <ProjectItem
             {...props}
-            showButton={showButton}
-            buttonHref={buttonHref}
-            buttonTarget={buttonTarget}
-            buttonText={buttonText}
             index={index}
             key={index}
           />

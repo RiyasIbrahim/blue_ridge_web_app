@@ -1,33 +1,70 @@
 export const projectList = [
     {
-      title: "Cutting Edge Project",
-      image: "https://source.unsplash.com/collection/347317/",
-      description:
-        "Praesent quis congue nisi. Vivamus dapibus suscipit magna at imperdiet. Mauris consectetur pharetra metus eu suscipit. Maecenas augue tortor, consequat vitae lacus id, pharetra tempor mauris. Suspendisse sodales commodo erat, non imperdiet nisl scelerisque at. Nulla porttitor gravida diam, in ornare ipsum accumsan bibendum. Morbi ut ante metus. ",
+      title: "Browsing",
+      image: "https://images.unsplash.com/photo-1616499370260-485b3e5ed653?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      contents: [
+        "Printing & Scanning",
+        "Lamination",
+        "Photo PrintOut",
+        "Email & Browsing",
+        "Money Transfer",
+        "FSSAI Licence",
+        "PAN Card",
+        "Aadhaar Correction",
+        "Passport Appointment Booking",
+        "Government Certificates"
+      ]
     },
     {
-      title: "Featured Artist 3D",
-      image: "https://source.unsplash.com/collection/3573299/",
-      description:
-        "Duis at tellus vitae velit aliquet varius. Fusce luctus libero et ligula tristique lobortis. Vestibulum eu placerat risus, eu semper augue. Integer at purus sit amet elit pretium viverra. Suspendisse id fringilla nibh, nec dictum urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. ",
+      title: "Designing",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxUAYBtEHGnWneOQ9XPuKYRvTAuyUMajgwpu5siwayRFrPhcNUydQYhog_KI0rqBSgvuw&usqp=CAU",
+      contents: [
+        "Visiting Card",
+        "Invitation",
+        "Notice",
+        "Banner",
+        "Poster",
+        "Bill book",
+        "Calender",
+        "ID Card"
+      ]
     },
     {
-      title: "Interactive AI",
-      image: "https://source.unsplash.com/collection/2276562/",
-      description:
-        "Praesent quis congue nisi. Vivamus dapibus suscipit magna at imperdiet. Maecenas augue tortor, consequat vitae lacus id, pharetra tempor mauris. Suspendisse sodales commodo erat, non imperdiet nisl scelerisque at. Nulla porttitor gravida diam, in ornare ipsum accumsan bibendum. Morbi ut ante metus. Proin rhoncus magna lectus, nec consequat augue ultricies eu.",
+      title: "LED Board",
+      image: "https://www.traveloffpath.com/wp-content/uploads/2020/03/jon-tyson-8MMtYM_3xMY-unsplash.jpg",
+      contents: [
+        "Foam Board",
+        "Aluminium Board",
+        "PVC Board",
+        "3D Name Board",
+        "3D Number Plate"
+      ]
     },
     {
-      title: "Slices of Sky",
-      image: "https://source.unsplash.com/collection/2203755/",
-      description:
-        "Praesent quis congue nisi. Vivamus dapibus suscipit magna at imperdiet. Mauris consectetur pharetra metus eu suscipit. Maecenas augue tortor, consequat vitae lacus id, pharetra tempor mauris. Suspendisse sodales commodo erat, non imperdiet nisl scelerisque at. Nulla porttitor gravida diam, in ornare ipsum accumsan bibendum. Morbi ut ante metus. ",
+      title: "Stickers",
+      image: "https://www.cuinsight.com/wp-content/uploads/2022/03/ali-kazal-HBKnfItbamo-unsplash.jpg",
+      contents: [
+        "Vinyl Sticker",
+        "UV Sticker",
+        "Number Plate Sticker",
+        "Product Branding Sticker",
+        "Packaging Sticker",
+        "Mobile Sticker"
+      ]
     },
     {
-      title: "Micro Worlds",
-      image: "https://source.unsplash.com/collection/573009/",
-      description:
-        "Duis at tellus vitae velit aliquet varius. Fusce luctus libero et ligula tristique lobortis. Vestibulum eu placerat risus, eu semper augue. Integer at purus sit amet elit pretium viverra. Suspendisse id fringilla nibh, nec dictum urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. ",
+      title: "Gifts",
+      image: "https://cdn.pixabay.com/photo/2014/11/27/22/44/gift-548290__340.jpg",
+      contents: [
+        "3D Wall Art",
+        "Customized Wall Clock",
+        "Frames (All Size)",
+        "Digital Painting",
+        "Mug Printing",
+        "Magic Pillow",
+        "Key Chain",
+        "Photo Cut Out"
+      ]
     },
   ];
   

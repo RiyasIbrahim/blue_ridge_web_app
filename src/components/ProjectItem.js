@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { LinkButton } from "../components/Button";
 import { useSpring, animated } from "react-spring";
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ListItemIcon from '@mui/material/ListItemIcon';
 
 const calc = (x, y) => [
   -(y - window.innerHeight / 2) / 20,
@@ -13,12 +17,8 @@ const trans = (x, y, s) =>
 
 const ProjectItem = ({
   title,
-  description,
+  contents,
   image,
-  showButton,
-  buttonHref,
-  buttonTarget,
-  buttonText,
   index,
 }) => {
   const [props, set] = useSpring(() => ({
@@ -51,15 +51,20 @@ const ProjectItem = ({
         <Right>
           <NumberWrapper>
             <Number>{index > 10 ? (index += 1) : `0${(index += 1)}`}</Number>
-            <NumberTitle>PROJECT</NumberTitle>
           </NumberWrapper>
           <Title>{title}</Title>
-          <Description>{description}</Description>
-          {showButton && (
-            <Button href={buttonHref} rel="#" target={buttonTarget}>
-              {buttonText}
-            </Button>
-          )}
+          <ListWrapper>
+            {contents.map((item, i) => (
+              <ListItem key={index + "-" + i} component="div" disablePadding>
+              <ListItemButton>
+              <ListItemIcon>
+                <ArrowForwardIosIcon />
+              </ListItemIcon>
+                <ListItemText primary={item} />
+              </ListItemButton>
+            </ListItem>
+            ))}
+          </ListWrapper>
         </Right>
       </Content>
     </Container>
@@ -114,6 +119,7 @@ const AnimatedDiv = styled.div`
   background-image: ${(props) => props.image};
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.5s;
   will-change: transform;
@@ -150,6 +156,7 @@ const Title = styled.h2`
   font-size: 44px;
   margin: 2rem 0;
   position: relative;
+  top: 0;
   line-height: 1.2em;
 
   @media (max-width: ${(props) => props.theme.tablet}px) {
@@ -157,10 +164,12 @@ const Title = styled.h2`
   }
 `;
 
-const Description = styled.p`
+const ListWrapper = styled.div`
   font-size: ${(props) => props.theme.fontSize};
   letter-spacing: ${(props) => props.theme.letterSpacing};
-  line-height: ${(props) => props.theme.lineHeight};
+  width: 300px;
+  height: 350px;
+  overflow: scroll;
 
   @media (max-width: ${(props) => props.theme.tablet}px) {
     display: none;
@@ -169,28 +178,16 @@ const Description = styled.p`
 
 const NumberWrapper = styled.div`
   position: relative;
-  height: 90px;
+  height: 30px;
 `;
 
-const Number = styled.h1`
-  position: absolute;
-  font-size: 190px;
-  margin: 0;
-  left: 0;
-  top: 0;
-  opacity: 0.2;
-`;
 
-const NumberTitle = styled.div`
+const Number = styled.div`
   position: absolute;
   left: 0;
   top: 0x;
-  letter-spacing: 0.5em;
+  font-size: 40px;
   opacity: 0.4;
-`;
-
-const Button = styled(LinkButton)`
-  margin-top: 1em;
 `;
 
 export default ProjectItem;
