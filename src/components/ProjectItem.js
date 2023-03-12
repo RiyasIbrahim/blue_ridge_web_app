@@ -43,7 +43,7 @@ const ProjectItem = ({
             }
             onMouseLeave={() => set({ xys: [0, 0, 1] })}
             style={{
-              transform: props.xys.interpolate(trans),
+              transform: props.xys.to(trans),
               backgroundImage: `url(${image})`,
             }}
           />
